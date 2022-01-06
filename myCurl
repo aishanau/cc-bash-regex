@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# if you provide a URL to the script, it will run the command
+if [ $# -eq 1 ] 
+then
+    curl "$1" | python -m json.tool
+# if no URL is provided to the script, it will print a usage message
+else
+    echo "Usage: "$0" <API URL>" #1>&2
+    exit 1
+fi
